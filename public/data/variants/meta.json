@@ -1,0 +1,1145 @@
+{
+ "variants": {
+  "V0": {
+   "measures": {
+    "segments": 1305,
+    "intersections": 640,
+    "blocks": 31,
+    "mean_block_area_ha": 5.06,
+    "mean_block_side_m": 176,
+    "ped": {
+     "mean": 0.0171364672392397,
+     "max": 0.1779511576276562,
+     "mean_walk_m": 910,
+     "axis": null,
+     "square": null,
+     "riessner": 0.11294986016203903,
+     "axis_rank": null,
+     "square_rank": null
+    },
+    "car": {
+     "mean": 0.030258351418154545,
+     "max": 0.30415390350237437,
+     "axis": null,
+     "square": null,
+     "riessner": 0.21204209155295847,
+     "interior_mean": 0.02635236560456573
+    },
+    "car_flow_on_edges": 0.278,
+    "ped_nodes": 1051,
+    "car_nodes": 786
+   },
+   "added_routes": [],
+   "filters": [],
+   "removed_buildings": [],
+   "removed_building_uses": {},
+   "removed_floor_area_m2": 0,
+   "removed_segments": 0,
+   "square": null
+  },
+  "V1": {
+   "measures": {
+    "segments": 1347,
+    "intersections": 662,
+    "blocks": 36,
+    "mean_block_area_ha": 4.36,
+    "mean_block_side_m": 168,
+    "ped": {
+     "mean": 0.016484181785576126,
+     "max": 0.14928413667662727,
+     "mean_walk_m": 895,
+     "axis": null,
+     "square": null,
+     "riessner": 0.10171228014679162,
+     "axis_rank": null,
+     "square_rank": null
+    },
+    "car": {
+     "mean": 0.02875267990101299,
+     "max": 0.26892520868623054,
+     "axis": null,
+     "square": null,
+     "riessner": 0.19849910461149958,
+     "interior_mean": 0.025115664999690302
+    },
+    "car_flow_on_edges": 0.271,
+    "ped_nodes": 1075,
+    "car_nodes": 810
+   },
+   "added_routes": [
+    {
+     "name": "New street A (y −130)",
+     "kind": "street",
+     "length_m": 507
+    },
+    {
+     "name": "New street B (y 0)",
+     "kind": "street",
+     "length_m": 511
+    },
+    {
+     "name": "New street C (x −145)",
+     "kind": "street",
+     "length_m": 353
+    },
+    {
+     "name": "New street D (x 110)",
+     "kind": "street",
+     "length_m": 348
+    }
+   ],
+   "filters": [],
+   "removed_buildings": [
+    "DETHL51P0001jcRfBL",
+    "DETHL51P0000YHVKBL",
+    "DETHL51P0000s1EiBL",
+    "DETHL51P0000s1IpBL",
+    "DETHL51P0000s1BeBL",
+    "DETHL51P0000s1HhBL",
+    "DETHL51P0001ajjHBL",
+    "DETHL51P0000Uvl0BL",
+    "DETHL51P0001fWfgBL",
+    "DETHL51P0000s1E2BL",
+    "DETHL51P0000s1IEBL",
+    "DETHL51P0000s3CrBL",
+    "DETHL51P0000s1F8BL",
+    "DETHL51P0001ajjLBL",
+    "DETHL51P0001iQBsBL",
+    "DETHL51P0001ajjKBL",
+    "DETHL51P00013uFeBL",
+    "DETHL51P0001ajjMBL",
+    "DETHL51P0000Uvl5BL",
+    "DETHL51P0001fWffBL",
+    "DETHL51P0001fWfhBL",
+    "DETHL51P0000s1IHBL",
+    "DETHL51P0000s1BkBL",
+    "DETHL51P0000s1IqBL",
+    "DETHL51P0000s1E4BL",
+    "DETHL51P0000s1C2BL",
+    "DETHL51P0000s1CxBL",
+    "DETHL51P0000s1CTBL",
+    "DETHL51P0000s1IKBL",
+    "DETHL51P0000s1CRBL",
+    "DETHL51P0000s1CMBL",
+    "DETHL51P0000Uvl1BL"
+   ],
+   "removed_building_uses": {
+    "Industry & workshops": 23,
+    "Shops & services": 4,
+    "Sheds & canopies": 3,
+    "Utilities": 2
+   },
+   "removed_floor_area_m2": 21874,
+   "removed_segments": 0,
+   "square": null
+  },
+  "V2": {
+   "measures": {
+    "segments": 1369,
+    "intersections": 673,
+    "blocks": 39,
+    "mean_block_area_ha": 4.02,
+    "mean_block_side_m": 161,
+    "ped": {
+     "mean": 0.01610361129207939,
+     "max": 0.14727703235990527,
+     "mean_walk_m": 886,
+     "axis": 0.030619925746095983,
+     "square": null,
+     "riessner": 0.09860182951780976,
+     "axis_rank": 0.82,
+     "square_rank": null
+    },
+    "car": {
+     "mean": 0.02847590731823328,
+     "max": 0.26660412757973734,
+     "axis": 0.013775805645724344,
+     "square": null,
+     "riessner": 0.19698724746444787,
+     "interior_mean": 0.024858097275861402
+    },
+    "car_flow_on_edges": 0.27,
+    "ped_nodes": 1086,
+    "car_nodes": 820
+   },
+   "added_routes": [
+    {
+     "name": "New street A (y −130)",
+     "kind": "street",
+     "length_m": 507
+    },
+    {
+     "name": "New street B (y 0)",
+     "kind": "street",
+     "length_m": 511
+    },
+    {
+     "name": "New street C (x −145)",
+     "kind": "street",
+     "length_m": 353
+    },
+    {
+     "name": "New street D (x 110)",
+     "kind": "street",
+     "length_m": 348
+    },
+    {
+     "name": "Station axis: park path",
+     "kind": "path",
+     "length_m": 336
+    },
+    {
+     "name": "Station axis: diagonal",
+     "kind": "path",
+     "length_m": 286
+    },
+    {
+     "name": "Station axis: south street",
+     "kind": "street",
+     "length_m": 152
+    },
+    {
+     "name": "Station axis: rail bridge",
+     "kind": "bridge",
+     "length_m": 62
+    }
+   ],
+   "filters": [],
+   "removed_buildings": [
+    "DETHL51P0000s1HtBL",
+    "DETHL51P0000Uvl4BL",
+    "DETHL51P0001jcRfBL",
+    "DETHL51P0000YHVKBL",
+    "DETHL51P00012wgQBL",
+    "DETHL51P0000s1EiBL",
+    "DETHL51P0000s1IpBL",
+    "DETHL51P0000s1BeBL",
+    "DETHL51P0000s1HhBL",
+    "DETHL51P0001ajjHBL",
+    "DETHL51P0000Uvl0BL",
+    "DETHL51P0001fWfgBL",
+    "DETHL51P0000s1E2BL",
+    "DETHL51P0000s1IEBL",
+    "DETHL51P0000s3CrBL",
+    "DETHL51P0000s1F8BL",
+    "DETHL51P0001ajjLBL",
+    "DETHL51P0001iQBsBL",
+    "DETHL51P0001ajjKBL",
+    "DETHL51P00013uFeBL",
+    "DETHL51P0001ajjMBL",
+    "DETHL51P0000Uvl5BL",
+    "DETHL51P0001fWffBL",
+    "DETHL51P0001fWfhBL",
+    "DETHL51P0000s1IHBL",
+    "DETHL51P0000s1BkBL",
+    "DETHL51P0000s1IqBL",
+    "DETHL51P0000s1E4BL",
+    "DETHL51P0000s1C2BL",
+    "DETHL51P0000s1CxBL",
+    "DETHL51P0000Uvl2BL",
+    "DETHL51P0000s1CTBL",
+    "DETHL51P0000s1IKBL",
+    "DETHL51P0000s1CRBL",
+    "DETHL51P0000s1CMBL",
+    "DETHL51P0000Uvl1BL"
+   ],
+   "removed_building_uses": {
+    "Industry & workshops": 25,
+    "Shops & services": 5,
+    "Sheds & canopies": 3,
+    "Utilities": 2,
+    "Sport & leisure": 1
+   },
+   "removed_floor_area_m2": 24510,
+   "removed_segments": 0,
+   "square": null
+  },
+  "V3": {
+   "measures": {
+    "segments": 1394,
+    "intersections": 683,
+    "blocks": 42,
+    "mean_block_area_ha": 3.74,
+    "mean_block_side_m": 151,
+    "ped": {
+     "mean": 0.016275778955694,
+     "max": 0.18840816218880377,
+     "mean_walk_m": 879,
+     "axis": 0.030701983329606126,
+     "square": 0.04424080858554716,
+     "riessner": 0.1117102968021253,
+     "axis_rank": 0.829,
+     "square_rank": 0.898
+    },
+    "car": {
+     "mean": 0.028585527737923718,
+     "max": 0.26044719529440696,
+     "axis": 0.014596063252632843,
+     "square": 0.2517178986447119,
+     "riessner": 0.19633527702768147,
+     "interior_mean": 0.025128094698720953
+    },
+    "car_flow_on_edges": 0.27,
+    "ped_nodes": 1102,
+    "car_nodes": 827
+   },
+   "added_routes": [
+    {
+     "name": "New street A (y −130)",
+     "kind": "street",
+     "length_m": 507
+    },
+    {
+     "name": "New street B (y 0)",
+     "kind": "street",
+     "length_m": 511
+    },
+    {
+     "name": "New street C (x −145)",
+     "kind": "street",
+     "length_m": 353
+    },
+    {
+     "name": "New street D (x 110)",
+     "kind": "street",
+     "length_m": 348
+    },
+    {
+     "name": "Station axis: park path",
+     "kind": "path",
+     "length_m": 336
+    },
+    {
+     "name": "Station axis: diagonal",
+     "kind": "path",
+     "length_m": 286
+    },
+    {
+     "name": "Station axis: south street",
+     "kind": "street",
+     "length_m": 152
+    },
+    {
+     "name": "Station axis: rail bridge",
+     "kind": "bridge",
+     "length_m": 62
+    },
+    {
+     "name": "Square: diagonal",
+     "kind": "path",
+     "length_m": 103
+    },
+    {
+     "name": "Square: diagonal",
+     "kind": "path",
+     "length_m": 99
+    },
+    {
+     "name": "Square: edge",
+     "kind": "path",
+     "length_m": 71
+    },
+    {
+     "name": "Square: edge",
+     "kind": "path",
+     "length_m": 71
+    }
+   ],
+   "filters": [],
+   "removed_buildings": [
+    "DETHL51P0000s1HtBL",
+    "DETHL51P0000Uvl4BL",
+    "DETHL51P0001jcRfBL",
+    "DETHL51P0000YHVKBL",
+    "DETHL51P00012wgQBL",
+    "DETHL51P0000s1KrBL",
+    "DETHL51P00012wgOBL",
+    "DETHL51P0000s1EiBL",
+    "DETHL51P0000s1IpBL",
+    "DETHL51P0000s1BeBL",
+    "DETHL51P0000s1HhBL",
+    "DETHL51P0001ajjHBL",
+    "DETHL51P0000Uvl0BL",
+    "DETHL51P0001fWfgBL",
+    "DETHL51P0000s1E2BL",
+    "DETHL51P0000s1IEBL",
+    "DETHL51P0000s3CrBL",
+    "DETHL51P0000s1F8BL",
+    "DETHL51P0001ajjLBL",
+    "DETHL51P0001iQBsBL",
+    "DETHL51P0001ajjKBL",
+    "DETHL51P00013uFeBL",
+    "DETHL51P0001ajjMBL",
+    "DETHL51P0000Uvl5BL",
+    "DETHL51P0001fWffBL",
+    "DETHL51P0001fWfhBL",
+    "DETHL51P0000s1IHBL",
+    "DETHL51P0000s1BkBL",
+    "DETHL51P0000s1IqBL",
+    "DETHL51P0000s1E4BL",
+    "DETHL51P0000s1C2BL",
+    "DETHL51P0000s1CxBL",
+    "DETHL51P0000Uvl2BL",
+    "DETHL51P0000s1CTBL",
+    "DETHL51P0000s1IKBL",
+    "DETHL51P0000s1CRBL",
+    "DETHL51P0000s1CMBL",
+    "DETHL51P0000Uvl1BL"
+   ],
+   "removed_building_uses": {
+    "Industry & workshops": 25,
+    "Shops & services": 5,
+    "Utilities": 3,
+    "Sheds & canopies": 3,
+    "Sport & leisure": 2
+   },
+   "removed_floor_area_m2": 24552,
+   "removed_segments": 5,
+   "square": [
+    [
+     11.3257776,
+     50.9939005
+    ],
+    [
+     11.3268032,
+     50.9938735
+    ],
+    [
+     11.3268032,
+     50.9932353
+    ],
+    [
+     11.3257776,
+     50.9932622
+    ],
+    [
+     11.3257776,
+     50.9939005
+    ]
+   ]
+  },
+  "V4": {
+   "measures": {
+    "segments": 1394,
+    "intersections": 683,
+    "blocks": 42,
+    "mean_block_area_ha": 3.74,
+    "mean_block_side_m": 151,
+    "ped": {
+     "mean": 0.016275778955694,
+     "max": 0.18840816218880377,
+     "mean_walk_m": 879,
+     "axis": 0.030701983329606126,
+     "square": 0.04424080858554716,
+     "riessner": 0.1117102968021253,
+     "axis_rank": 0.829,
+     "square_rank": 0.898
+    },
+    "car": {
+     "mean": 0.030514006179512682,
+     "max": 0.28858354974806105,
+     "axis": 0.008952624286791073,
+     "square": 0.2631637246950919,
+     "riessner": 0.21464437228993619,
+     "interior_mean": 0.024449064485955022
+    },
+    "car_flow_on_edges": 0.349,
+    "ped_nodes": 1102,
+    "car_nodes": 827
+   },
+   "added_routes": [
+    {
+     "name": "New street A (y −130)",
+     "kind": "street",
+     "length_m": 507
+    },
+    {
+     "name": "New street B (y 0)",
+     "kind": "street",
+     "length_m": 511
+    },
+    {
+     "name": "New street C (x −145)",
+     "kind": "street",
+     "length_m": 353
+    },
+    {
+     "name": "New street D (x 110)",
+     "kind": "street",
+     "length_m": 348
+    },
+    {
+     "name": "Station axis: park path",
+     "kind": "path",
+     "length_m": 336
+    },
+    {
+     "name": "Station axis: diagonal",
+     "kind": "path",
+     "length_m": 286
+    },
+    {
+     "name": "Station axis: south street",
+     "kind": "street",
+     "length_m": 152
+    },
+    {
+     "name": "Station axis: rail bridge",
+     "kind": "bridge",
+     "length_m": 62
+    },
+    {
+     "name": "Square: diagonal",
+     "kind": "path",
+     "length_m": 103
+    },
+    {
+     "name": "Square: diagonal",
+     "kind": "path",
+     "length_m": 99
+    },
+    {
+     "name": "Square: edge",
+     "kind": "path",
+     "length_m": 71
+    },
+    {
+     "name": "Square: edge",
+     "kind": "path",
+     "length_m": 71
+    }
+   ],
+   "filters": [
+    {
+     "label": "Industriestraße between streets A and B",
+     "x": -8.200436770510022,
+     "y": -64.80754023020327,
+     "street": "Industriestraße",
+     "lonlat": [
+      11.3246922,
+      50.9953135
+     ]
+    },
+    {
+     "label": "Industriestraße at the Stadtwerke",
+     "x": -32.00233079120471,
+     "y": 249.37063296710113,
+     "street": "Industriestraße",
+     "lonlat": [
+      11.3243532,
+      50.9981376
+     ]
+    },
+    {
+     "label": "New street C",
+     "x": -145.13893314846914,
+     "y": -65.00010325998164,
+     "street": "New street C (x −145)",
+     "lonlat": [
+      11.3227416,
+      50.9953117
+     ]
+    },
+    {
+     "label": "New street D",
+     "x": 109.67694943251296,
+     "y": -65.00055600824477,
+     "street": "New street D (x 110)",
+     "lonlat": [
+      11.3263713,
+      50.9953117
+     ]
+    },
+    {
+     "label": "Rödchenweg between Nordstraße and the housing",
+     "x": -288.814530092491,
+     "y": 369.9933018159991,
+     "street": "Rödchenweg",
+     "lonlat": [
+      11.3206951,
+      50.9992218
+     ]
+    },
+    {
+     "label": "Access road along the allotments",
+     "x": 241.98829937232804,
+     "y": 149.94998481273632,
+     "street": null,
+     "lonlat": [
+      11.3282559,
+      50.9972439
+     ]
+    }
+   ],
+   "removed_buildings": [
+    "DETHL51P0000s1HtBL",
+    "DETHL51P0000Uvl4BL",
+    "DETHL51P0001jcRfBL",
+    "DETHL51P0000YHVKBL",
+    "DETHL51P00012wgQBL",
+    "DETHL51P0000s1KrBL",
+    "DETHL51P00012wgOBL",
+    "DETHL51P0000s1EiBL",
+    "DETHL51P0000s1IpBL",
+    "DETHL51P0000s1BeBL",
+    "DETHL51P0000s1HhBL",
+    "DETHL51P0001ajjHBL",
+    "DETHL51P0000Uvl0BL",
+    "DETHL51P0001fWfgBL",
+    "DETHL51P0000s1E2BL",
+    "DETHL51P0000s1IEBL",
+    "DETHL51P0000s3CrBL",
+    "DETHL51P0000s1F8BL",
+    "DETHL51P0001ajjLBL",
+    "DETHL51P0001iQBsBL",
+    "DETHL51P0001ajjKBL",
+    "DETHL51P00013uFeBL",
+    "DETHL51P0001ajjMBL",
+    "DETHL51P0000Uvl5BL",
+    "DETHL51P0001fWffBL",
+    "DETHL51P0001fWfhBL",
+    "DETHL51P0000s1IHBL",
+    "DETHL51P0000s1BkBL",
+    "DETHL51P0000s1IqBL",
+    "DETHL51P0000s1E4BL",
+    "DETHL51P0000s1C2BL",
+    "DETHL51P0000s1CxBL",
+    "DETHL51P0000Uvl2BL",
+    "DETHL51P0000s1CTBL",
+    "DETHL51P0000s1IKBL",
+    "DETHL51P0000s1CRBL",
+    "DETHL51P0000s1CMBL",
+    "DETHL51P0000Uvl1BL"
+   ],
+   "removed_building_uses": {
+    "Industry & workshops": 25,
+    "Shops & services": 5,
+    "Utilities": 3,
+    "Sheds & canopies": 3,
+    "Sport & leisure": 2
+   },
+   "removed_floor_area_m2": 24552,
+   "removed_segments": 5,
+   "square": [
+    [
+     11.3257776,
+     50.9939005
+    ],
+    [
+     11.3268032,
+     50.9938735
+    ],
+    [
+     11.3268032,
+     50.9932353
+    ],
+    [
+     11.3257776,
+     50.9932622
+    ],
+    [
+     11.3257776,
+     50.9939005
+    ]
+   ]
+  },
+  "V5": {
+   "measures": {
+    "segments": 1409,
+    "intersections": 691,
+    "blocks": 43,
+    "mean_block_area_ha": 3.65,
+    "mean_block_side_m": 150,
+    "ped": {
+     "mean": 0.016084479043801145,
+     "max": 0.18607742069170946,
+     "mean_walk_m": 875,
+     "axis": 0.03041748703458002,
+     "square": 0.043608601313922205,
+     "riessner": 0.10988303719521855,
+     "axis_rank": 0.823,
+     "square_rank": 0.903
+    },
+    "car": {
+     "mean": 0.030310387425434883,
+     "max": 0.2886219235895797,
+     "axis": 0.009133309598819543,
+     "square": 0.26045766028233835,
+     "riessner": 0.21299490285029,
+     "interior_mean": 0.024339363581625233
+    },
+    "car_flow_on_edges": 0.346,
+    "ped_nodes": 1112,
+    "car_nodes": 834
+   },
+   "added_routes": [
+    {
+     "name": "New street A (y −130)",
+     "kind": "street",
+     "length_m": 507
+    },
+    {
+     "name": "New street B (y 0)",
+     "kind": "street",
+     "length_m": 511
+    },
+    {
+     "name": "New street C (x −145)",
+     "kind": "street",
+     "length_m": 353
+    },
+    {
+     "name": "New street D (x 110)",
+     "kind": "street",
+     "length_m": 348
+    },
+    {
+     "name": "Station axis: park path",
+     "kind": "path",
+     "length_m": 336
+    },
+    {
+     "name": "Station axis: diagonal",
+     "kind": "path",
+     "length_m": 286
+    },
+    {
+     "name": "Station axis: south street",
+     "kind": "street",
+     "length_m": 152
+    },
+    {
+     "name": "Station axis: rail bridge",
+     "kind": "bridge",
+     "length_m": 62
+    },
+    {
+     "name": "Square: diagonal",
+     "kind": "path",
+     "length_m": 103
+    },
+    {
+     "name": "Square: diagonal",
+     "kind": "path",
+     "length_m": 99
+    },
+    {
+     "name": "Square: edge",
+     "kind": "path",
+     "length_m": 71
+    },
+    {
+     "name": "Square: edge",
+     "kind": "path",
+     "length_m": 71
+    },
+    {
+     "name": "Green link: west",
+     "kind": "path",
+     "length_m": 265
+    },
+    {
+     "name": "Green link: Stadtwerke edge",
+     "kind": "path",
+     "length_m": 262
+    },
+    {
+     "name": "Green link: allotments",
+     "kind": "path",
+     "length_m": 288
+    }
+   ],
+   "filters": [
+    {
+     "label": "Industriestraße between streets A and B",
+     "x": -8.200436770510022,
+     "y": -64.80754023020327,
+     "street": "Industriestraße",
+     "lonlat": [
+      11.3246922,
+      50.9953135
+     ]
+    },
+    {
+     "label": "Industriestraße at the Stadtwerke",
+     "x": -32.00233079120471,
+     "y": 249.37063296710113,
+     "street": "Industriestraße",
+     "lonlat": [
+      11.3243532,
+      50.9981376
+     ]
+    },
+    {
+     "label": "New street C",
+     "x": -145.13893314846914,
+     "y": -65.00010325998164,
+     "street": "New street C (x −145)",
+     "lonlat": [
+      11.3227416,
+      50.9953117
+     ]
+    },
+    {
+     "label": "New street D",
+     "x": 109.67694943251296,
+     "y": -65.00055600824477,
+     "street": "New street D (x 110)",
+     "lonlat": [
+      11.3263713,
+      50.9953117
+     ]
+    },
+    {
+     "label": "Rödchenweg between Nordstraße and the housing",
+     "x": -288.814530092491,
+     "y": 369.9933018159991,
+     "street": "Rödchenweg",
+     "lonlat": [
+      11.3206951,
+      50.9992218
+     ]
+    },
+    {
+     "label": "Access road along the allotments",
+     "x": 241.98829937232804,
+     "y": 149.94998481273632,
+     "street": null,
+     "lonlat": [
+      11.3282559,
+      50.9972439
+     ]
+    }
+   ],
+   "removed_buildings": [
+    "DETHL51P0000s1HtBL",
+    "DETHL51P0000Uvl4BL",
+    "DETHL51P0001jcRfBL",
+    "DETHL51P0000YHVKBL",
+    "DETHL51P00012wgQBL",
+    "DETHL51P0000s1KrBL",
+    "DETHL51P00012wgOBL",
+    "DETHL51P0000s1EiBL",
+    "DETHL51P0000s1IpBL",
+    "DETHL51P0000s1BeBL",
+    "DETHL51P0000s1HhBL",
+    "DETHL51P0001ajjHBL",
+    "DETHL51P0000Uvl0BL",
+    "DETHL51P0001fWfgBL",
+    "DETHL51P0000s1E2BL",
+    "DETHL51P0000s1IEBL",
+    "DETHL51P0000s3CrBL",
+    "DETHL51P0000s1F8BL",
+    "DETHL51P0001ajjLBL",
+    "DETHL51P0001iQBsBL",
+    "DETHL51P0001ajjKBL",
+    "DETHL51P00013uFeBL",
+    "DETHL51P0001ajjMBL",
+    "DETHL51P0000Uvl5BL",
+    "DETHL51P0001fWffBL",
+    "DETHL51P0001fWfhBL",
+    "DETHL51P0001ajjQBL",
+    "DETHL51P0000s1IHBL",
+    "DETHL51P0000s1BkBL",
+    "DETHL51P0000s1IqBL",
+    "DETHL51P0000s1E4BL",
+    "DETHL51P0000s1C2BL",
+    "DETHL51P0000s1CxBL",
+    "DETHL51P0000Uvl2BL",
+    "DETHL51P0000s1CTBL",
+    "DETHL51P0000s1IKBL",
+    "DETHL51P0000s1CRBL",
+    "DETHL51P0000s1FJBL",
+    "DETHL51P0000s1IiBL",
+    "DETHL51P0000s1FLBL",
+    "DETHL51P0000s1FIBL",
+    "DETHL51P0000s1CMBL",
+    "DETHL51P0000Uvl1BL"
+   ],
+   "removed_building_uses": {
+    "Industry & workshops": 25,
+    "Sport & leisure": 6,
+    "Shops & services": 5,
+    "Utilities": 4,
+    "Sheds & canopies": 3
+   },
+   "removed_floor_area_m2": 24655,
+   "removed_segments": 5,
+   "square": [
+    [
+     11.3257776,
+     50.9939005
+    ],
+    [
+     11.3268032,
+     50.9938735
+    ],
+    [
+     11.3268032,
+     50.9932353
+    ],
+    [
+     11.3257776,
+     50.9932622
+    ],
+    [
+     11.3257776,
+     50.9939005
+    ]
+   ]
+  },
+  "V6": {
+   "measures": {
+    "segments": 1426,
+    "intersections": 700,
+    "blocks": 43,
+    "mean_block_area_ha": 3.65,
+    "mean_block_side_m": 150,
+    "ped": {
+     "mean": 0.015878725662310418,
+     "max": 0.17048853439680958,
+     "mean_walk_m": 870,
+     "axis": 0.02931230232746736,
+     "square": 0.03614679447791318,
+     "riessner": 0.10753455741229263,
+     "axis_rank": 0.823,
+     "square_rank": 0.875
+    },
+    "car": {
+     "mean": 0.030688939369248033,
+     "max": 0.29178159940972814,
+     "axis": 0.00932705223527631,
+     "square": 0.2626776018313563,
+     "riessner": 0.21603638117940857,
+     "interior_mean": 0.02480029042761224
+    },
+    "car_flow_on_edges": 0.343,
+    "ped_nodes": 1122,
+    "car_nodes": 840
+   },
+   "added_routes": [
+    {
+     "name": "New street A (y −130)",
+     "kind": "street",
+     "length_m": 507
+    },
+    {
+     "name": "New street B (y 0)",
+     "kind": "street",
+     "length_m": 511
+    },
+    {
+     "name": "New street C (x −145)",
+     "kind": "street",
+     "length_m": 353
+    },
+    {
+     "name": "New street D (x 110)",
+     "kind": "street",
+     "length_m": 348
+    },
+    {
+     "name": "Station axis: park path",
+     "kind": "path",
+     "length_m": 336
+    },
+    {
+     "name": "Station axis: diagonal",
+     "kind": "path",
+     "length_m": 286
+    },
+    {
+     "name": "Station axis: south street",
+     "kind": "street",
+     "length_m": 152
+    },
+    {
+     "name": "Station axis: rail bridge",
+     "kind": "bridge",
+     "length_m": 62
+    },
+    {
+     "name": "Square: diagonal",
+     "kind": "path",
+     "length_m": 103
+    },
+    {
+     "name": "Square: diagonal",
+     "kind": "path",
+     "length_m": 99
+    },
+    {
+     "name": "Square: edge",
+     "kind": "path",
+     "length_m": 71
+    },
+    {
+     "name": "Square: edge",
+     "kind": "path",
+     "length_m": 71
+    },
+    {
+     "name": "Green link: west",
+     "kind": "path",
+     "length_m": 265
+    },
+    {
+     "name": "Green link: Stadtwerke edge",
+     "kind": "path",
+     "length_m": 262
+    },
+    {
+     "name": "Green link: allotments",
+     "kind": "path",
+     "length_m": 288
+    },
+    {
+     "name": "Rail promenade",
+     "kind": "path",
+     "length_m": 248
+    },
+    {
+     "name": "Square to Am Alten Speicher",
+     "kind": "path",
+     "length_m": 100
+    }
+   ],
+   "filters": [
+    {
+     "label": "Industriestraße between streets A and B",
+     "x": -8.200436770510022,
+     "y": -64.80754023020327,
+     "street": "Industriestraße",
+     "lonlat": [
+      11.3246922,
+      50.9953135
+     ]
+    },
+    {
+     "label": "Industriestraße at the Stadtwerke",
+     "x": -32.00233079120471,
+     "y": 249.37063296710113,
+     "street": "Industriestraße",
+     "lonlat": [
+      11.3243532,
+      50.9981376
+     ]
+    },
+    {
+     "label": "New street C",
+     "x": -145.13893314846914,
+     "y": -65.00010325998164,
+     "street": "New street C (x −145)",
+     "lonlat": [
+      11.3227416,
+      50.9953117
+     ]
+    },
+    {
+     "label": "New street D",
+     "x": 109.67694943251296,
+     "y": -65.00055600824477,
+     "street": "New street D (x 110)",
+     "lonlat": [
+      11.3263713,
+      50.9953117
+     ]
+    },
+    {
+     "label": "Rödchenweg between Nordstraße and the housing",
+     "x": -288.814530092491,
+     "y": 369.9933018159991,
+     "street": "Rödchenweg",
+     "lonlat": [
+      11.3206951,
+      50.9992218
+     ]
+    }
+   ],
+   "removed_buildings": [
+    "DETHL51P0000s1HtBL",
+    "DETHL51P0000Uvl4BL",
+    "DETHL51P0001jcRfBL",
+    "DETHL51P0000YHVKBL",
+    "DETHL51P00012wgQBL",
+    "DETHL51P0000s1KrBL",
+    "DETHL51P00012wgOBL",
+    "DETHL51P0000s1EiBL",
+    "DETHL51P0000s1IpBL",
+    "DETHL51P0000s1BeBL",
+    "DETHL51P0000s1HhBL",
+    "DETHL51P0001ajjHBL",
+    "DETHL51P0000Uvl0BL",
+    "DETHL51P0001fWfgBL",
+    "DETHL51P0000s1E2BL",
+    "DETHL51P0000s1IEBL",
+    "DETHL51P0000s3CrBL",
+    "DETHL51P0000s1F8BL",
+    "DETHL51P0001ajjLBL",
+    "DETHL51P0001iQBsBL",
+    "DETHL51P0001ajjKBL",
+    "DETHL51P00013uFeBL",
+    "DETHL51P0001ajjMBL",
+    "DETHL51P0000Uvl5BL",
+    "DETHL51P0001fWffBL",
+    "DETHL51P0001fWfhBL",
+    "DETHL51P0001ajjQBL",
+    "DETHL51P0000s1IHBL",
+    "DETHL51P0000s1BkBL",
+    "DETHL51P0000s1IqBL",
+    "DETHL51P0000s1E4BL",
+    "DETHL51P0000s1C2BL",
+    "DETHL51P0000s1CxBL",
+    "DETHL51P0000Uvl2BL",
+    "DETHL51P0000s1LHBL",
+    "DETHL51P0000s1M1BL",
+    "DETHL51P00013uFbBL",
+    "DETHL51P0000s1CTBL",
+    "DETHL51P0000s1IKBL",
+    "DETHL51P0000s1CRBL",
+    "DETHL51P0000s1FJBL",
+    "DETHL51P0000s1IiBL",
+    "DETHL51P0000s1FLBL",
+    "DETHL51P0000s1FIBL",
+    "DETHL51P0000s1CMBL",
+    "DETHL51P0000Uvl1BL"
+   ],
+   "removed_building_uses": {
+    "Industry & workshops": 26,
+    "Sport & leisure": 6,
+    "Shops & services": 5,
+    "Utilities": 4,
+    "Sheds & canopies": 3,
+    "Mobility & parking": 2
+   },
+   "removed_floor_area_m2": 24808,
+   "removed_segments": 5,
+   "square": [
+    [
+     11.3257776,
+     50.9939005
+    ],
+    [
+     11.3268032,
+     50.9938735
+    ],
+    [
+     11.3268032,
+     50.9932353
+    ],
+    [
+     11.3257776,
+     50.9932622
+    ],
+    [
+     11.3257776,
+     50.9939005
+    ]
+   ]
+  }
+ },
+ "max": {
+  "ped": 0.18840816218880377,
+  "car": 0.30415390350237437
+ }
+}

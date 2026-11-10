@@ -111,6 +111,24 @@ export const LAYERS = {
   fuel: { file: 'layers/fuel.geojson', kind: 'fill', fill: '#C2553F', marker: '#C2553F', z: 0.25, attribution: OSM, description: 'Fuel stations (OpenStreetMap).' },
   charging: { file: 'layers/charging.geojson', kind: 'fill', marker: '#3E7CB1', attribution: OSM, description: 'EV charging stations (OpenStreetMap).' },
 
+  // Experiment 1 (src/variants.js): drawn for the selected variant
+  variant_network: {
+    kind: 'variantNetwork', attribution: OVERTURE,
+    description: 'The street network of the selected variant, coloured by betweenness for the selected mode. New routes have a blue halo, the rail bridge is raised, red posts are modal filters. Grey lines are closed to the selected mode.',
+  },
+  variant_land: {
+    file: 'layers/land_use.geojson', kind: 'fill', colorBy: { property: 'land_use', palette: 'landUse' }, opacity: 0.45, z: 0.06, attribution: ALKIS,
+    description: 'Land use, faded, for orientation.',
+  },
+  variant_massing: {
+    file: 'layers/buildings.geojson', kind: 'extrude', height: 'height_est', fill: '#E7E4DE', excludeRemoved: true, attribution: ALKIS,
+    description: 'Today’s buildings (floors × 3 m), without the ones the variant clears.',
+  },
+  variant_removed: {
+    file: 'layers/buildings.geojson', kind: 'variantRemoved', attribution: ALKIS,
+    description: 'Footprints of buildings cleared for new streets, paths and the square, outlined in red.',
+  },
+
   overture_buildings: { file: 'buildings.geojson', kind: 'overture', attribution: OVERTURE, description: 'The kit’s Overture buildings, coloured by where their height comes from.' },
   overture_streets: { file: 'streets.geojson', kind: 'fill', lineColor: '#5d6b78', width: 1, z: 0.8, attribution: OVERTURE, description: 'The kit’s Overture streets and paths.' },
 }
@@ -189,6 +207,30 @@ export const VIEWS = [
         items: [
           { name: 'Betweenness (walking)', layers: ['betweenness'], legend: 'ramp', visible: true },
           { name: 'Street types', layers: ['streets'], legend: 'streetKind' },
+        ],
+      },
+      labels,
+    ],
+  },
+  {
+    id: 'experiment',
+    title: 'Experiment 1',
+    subtitle: 'Street network variants V0–V6',
+    variants: true,
+    groups: [
+      edge,
+      {
+        name: 'Network',
+        items: [
+          { name: 'Street network (betweenness)', layers: ['variant_network'], visible: true },
+          { name: 'Removed buildings', layers: ['variant_removed'], visible: true },
+        ],
+      },
+      {
+        name: 'Context',
+        items: [
+          { name: 'Buildings', layers: ['variant_massing'], visible: true },
+          { name: 'Land use', layers: ['variant_land'], legend: 'landUse' },
         ],
       },
       labels,

@@ -102,3 +102,7 @@ Fields worth knowing:
 - `network`: `kind` groups the Overture class into main road, local street, service road and footpath; `betweenness` (0–1) is edge betweenness on the walkable network inside the kit, weighted by length and scaled so the highest segment is 1. Edges near the kit edge are undercounted because walks beyond the kit are not included.
 
 Not yet included: LoD2 roof models. The Thuringia 3D building download (`geoportal.geoportal-th.de/dienste/atom_th_gebaeude`) was offline for maintenance on 2026-11-10.
+
+## variants/
+
+Experiment 1 street-network variants V0–V6, built by `scripts/kit/variants.py` from `layers/network.geojson` and `layers/buildings.geojson` (sources above). New streets, paths, the square and the modal filters are drawn from the Experiment 1 brief; betweenness and the other measures are computed with networkx. `meta.json` holds the measures, filters, square and removed building ids for each variant.

@@ -2,9 +2,8 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { Canvas, useThree } from '@react-three/fiber'
 import { OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
-import { LineSegments2 } from 'three/examples/jsm/lines/LineSegments2.js'
-import { LineSegmentsGeometry } from 'three/examples/jsm/lines/LineSegmentsGeometry.js'
-import { LineMaterial } from 'three/examples/jsm/lines/LineMaterial.js'
+import { useData, FatLines, Markers } from './primitives.jsx'
+import { VariantBar, VariantPanel, VariantNetwork, VariantRemoved, useRemovedSet } from './Experiment.jsx'
 import {
   LAYERS, VIEWS, PALETTES, RAMP, FLOOR_HEIGHT, OVERTURE_DEFAULT_HEIGHT, HEIGHT_SOURCE_GROUPS, itemKey, rampColor,
 } from './layers.js'
@@ -15,27 +14,6 @@ const ATTRIBUTION =
   'Cadastre: © GDI-Th, CC BY 4.0 (ALKIS). Points of interest: © OpenStreetMap contributors (ODbL). Kit buildings and streets: Overture Maps Foundation, © OpenStreetMap contributors, Microsoft (ODbL).'
 
 const PALETTE_MAPS = Object.fromEntries(Object.entries(PALETTES).map(([k, list]) => [k, Object.fromEntries(list)]))
-
-// ---------------------------------------------------------------------------
-// Data loading, cached per file
-// ---------------------------------------------------------------------------
-const cache = new Map()
-function fetchData(file) {
-  if (!cache.has(file)) cache.set(file, fetch(`${import.meta.env.BASE_URL}data/${file}`).then((r) => r.json()))
-  return cache.get(file)
-}
-
-function useData(file) {
-  const [data, setData] = useState(null)
-  useEffect(() => {
-    let live = true
-    if (file) fetchData(file).then((d) => live && setData(d))
-    return () => {
-      live = false
-    }
-  }, [file])
-  return data
-}
 
 function featuresOf(layer, data) {
   if (!data) return null
@@ -103,11 +81,15 @@ export default function App() {
   const [mode, setMode] = useState('3d')
   const [picked, setPicked] = useState(null)
   const [panelOpen, setPanelOpen] = useState(true)
+  const [variantId, setVariantId] = useState('V0')
+  const [vmode, setVmode] = useState('ped')
   const kit = useData('kit.json')
   const meta = useData('layers/meta.json')
   const streets = useData('streets.geojson')
 
   const view = VIEWS.find((v) => v.id === viewId) ?? VIEWS[0]
+  const vmeta = useData(view.variants ? 'variants/meta.json' : null)
+  const variant = useMemo(() => (view.variants && vmeta ? { id: variantId, mode: vmode, meta: vmeta } : null), [view.variants, vmeta, variantId, vmode])
   useEffect(() => save('view', view.id), [view.id])
   useEffect(() => setPicked(null), [view.id])
 
@@ -140,7 +122,7 @@ export default function App() {
 
       <div className="stage">
         {kit && (
-          <Scene key={view.id} kit={kit} items={items} viewId={view.id} hiddenCats={hiddenCats} mode={mode} streets={showLabels ? streets : null} onPick={setPicked} />
+          <Scene key={view.id} kit={kit} items={items} viewId={view.id} hiddenCats={hiddenCats} mode={mode} streets={showLabels ? streets : null} onPick={setPicked} variant={variant} />
         )}
 
         <aside className={panelOpen ? 'panel' : 'panel closed'}>
@@ -188,7 +170,13 @@ export default function App() {
           ))}
         </div>
 
-        {picked && <InfoCard picked={picked} onClose={() => setPicked(null)} />}
+        {view.variants && (
+          <>
+            <VariantBar variantId={variantId} onVariant={setVariantId} vmode={vmode} onMode={setVmode} />
+            <VariantPanel variantId={variantId} meta={vmeta} />
+          </>
+        )}
+        {picked && <InfoCard picked={picked} onClose={() => setPicked(null)} beside={!!view.variants} />}
         <div className="credit">{ATTRIBUTION}</div>
       </div>
     </div>
@@ -208,7 +196,7 @@ function Check({ on }) {
 }
 
 function itemCount(item, meta) {
-  if (!item.layers || !meta) return null
+  if (!item.layers || !meta || item.layers.some((id) => LAYERS[id].kind.startsWith('variant'))) return null
   const names = new Set(item.layers.map((id) => LAYERS[id].file?.match(/^layers\/(.+)\.geojson$/)?.[1]).filter(Boolean))
   if (!names.size) return null
   return [...names].reduce((n, name) => n + (meta.counts[name] ?? 0), 0)
@@ -282,10 +270,10 @@ function Legend({ item, hidden, onToggleCat }) {
   )
 }
 
-function InfoCard({ picked, onClose }) {
+function InfoCard({ picked, onClose, beside }) {
   const rows = Object.entries(picked.properties ?? {}).filter(([, v]) => v != null && v !== '')
   return (
-    <div className="info">
+    <div className={beside ? 'info beside' : 'info'}>
       <div className="info-head">
         <strong>{picked.layer}</strong>
         <button className="icon-btn" onClick={onClose} aria-label="Close">
@@ -309,7 +297,7 @@ function InfoCard({ picked, onClose }) {
 // ---------------------------------------------------------------------------
 // Scene
 // ---------------------------------------------------------------------------
-function Scene({ kit, items, viewId, hiddenCats, mode, streets, onPick }) {
+function Scene({ kit, items, viewId, hiddenCats, mode, streets, onPick, variant }) {
   const project = useMemo(() => makeProjection(kit.center), [kit])
   const span = Math.max(...kit.size_m)
 
@@ -327,7 +315,7 @@ function Scene({ kit, items, viewId, hiddenCats, mode, streets, onPick }) {
       <Ground boundary={kit.boundary} project={project} />
       {items.flatMap((it) =>
         (it.layers ?? []).map((id) => (
-          <Layer key={`${it.name}/${id}`} id={id} name={it.name} kit={kit} project={project} hidden={hiddenCats[itemKey(viewId, it)]} onPick={onPick} />
+          <Layer key={`${it.name}/${id}`} id={id} name={it.name} kit={kit} project={project} hidden={hiddenCats[itemKey(viewId, it)]} onPick={onPick} variant={variant} />
         )),
       )}
       {streets && <StreetLabels features={streets.features} project={project} />}
@@ -369,10 +357,13 @@ function pickHandler(onPick, name, lookup) {
   }
 }
 
-function Layer({ id, name, kit, project, hidden, onPick }) {
+function Layer({ id, name, kit, project, hidden, onPick, variant }) {
   const layer = LAYERS[id]
   if (layer.kind === 'kitBoundary') return <KitBoundary layer={layer} kit={kit} project={project} />
-  if (layer.kind === 'extrude' || layer.kind === 'overture') return <Extruded layer={layer} name={name} project={project} hidden={hidden} onPick={onPick} />
+  if (layer.kind === 'variantNetwork') return variant ? <VariantNetwork variant={variant} project={project} onPick={onPick} /> : null
+  if (layer.kind === 'variantRemoved') return variant ? <VariantRemoved variant={variant} project={project} /> : null
+  if (layer.kind === 'extrude' || layer.kind === 'overture')
+    return <Extruded layer={layer} name={name} project={project} hidden={hidden} onPick={onPick} variant={variant} />
   return <GeoLayer layer={layer} name={name} project={project} hidden={hidden} onPick={onPick} />
 }
 
@@ -414,7 +405,7 @@ function GeoLayer({ layer, name, project, hidden, onPick }) {
     <group>
       {built.fill && (
         <mesh geometry={built.fill.geometry} onClick={pickHandler(onPick, name, (e) => props(built.fill.owners.find(e.faceIndex)))}>
-          <meshBasicMaterial vertexColors side={THREE.DoubleSide} />
+          <meshBasicMaterial vertexColors side={THREE.DoubleSide} transparent={layer.opacity != null} opacity={layer.opacity ?? 1} depthWrite={layer.opacity == null} />
         </mesh>
       )}
       {built.outline && <FatLines positions={built.outline.positions} colors={built.outline.colors} width={layer.width ?? 1} />}
@@ -438,8 +429,10 @@ function GeoLayer({ layer, name, project, hidden, onPick }) {
   )
 }
 
-function Extruded({ layer, name, project, hidden, onPick }) {
-  const data = useData(layer.file)
+function Extruded({ layer, name, project, hidden, onPick, variant }) {
+  const raw = useData(layer.file)
+  const removed = useRemovedSet(layer.excludeRemoved ? variant : null)
+  const data = useMemo(() => (raw && removed.size ? { ...raw, features: raw.features.filter((f) => !removed.has(f.properties.id)) } : raw), [raw, removed])
   const built = useMemo(() => {
     if (!data?.features.length) return null
     if (layer.kind === 'overture') {
@@ -454,56 +447,5 @@ function Extruded({ layer, name, project, hidden, onPick }) {
     <mesh geometry={built.geometry} onClick={pickHandler(onPick, name, (e) => data.features[built.owners.find(e.faceIndex)]?.properties)}>
       <meshStandardMaterial vertexColors roughness={0.9} />
     </mesh>
-  )
-}
-
-// Lines with a width in screen pixels (WebGL lines are always 1 px). Optional per-segment colours.
-function FatLines({ positions, colors, color, width, onClick }) {
-  const size = useThree((s) => s.size)
-  const obj = useMemo(() => {
-    const g = new LineSegmentsGeometry()
-    g.setPositions(positions)
-    if (colors) g.setColors(colors)
-    const m = new LineMaterial({ color: colors ? '#ffffff' : color, linewidth: width, vertexColors: !!colors, worldUnits: false })
-    return new LineSegments2(g, m)
-  }, [positions, colors, color, width])
-  useEffect(() => {
-    obj.material.resolution.set(size.width, size.height)
-  }, [obj, size])
-  useEffect(
-    () => () => {
-      obj.geometry.dispose()
-      obj.material.dispose()
-    },
-    [obj],
-  )
-  return <primitive object={obj} onClick={onClick} />
-}
-
-const markerGeometry = new THREE.CylinderGeometry(5, 5, 2, 20)
-function Markers({ points, colorOf, onPick }) {
-  const ref = useRef()
-  useEffect(() => {
-    const m = new THREE.Matrix4()
-    const c = new THREE.Color()
-    points.forEach((p, i) => {
-      ref.current.setMatrixAt(i, m.makeTranslation(p.x, 1.5, -p.y))
-      ref.current.setColorAt(i, c.set(colorOf(p)))
-    })
-    ref.current.instanceMatrix.needsUpdate = true
-    if (ref.current.instanceColor) ref.current.instanceColor.needsUpdate = true
-    ref.current.computeBoundingSphere()
-  }, [points, colorOf])
-  return (
-    <instancedMesh
-      ref={ref}
-      args={[markerGeometry, undefined, points.length]}
-      onClick={(e) => {
-        e.stopPropagation()
-        onPick(points[e.instanceId].fi)
-      }}
-    >
-      <meshBasicMaterial />
-    </instancedMesh>
   )
 }

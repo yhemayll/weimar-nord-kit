@@ -388,6 +388,255 @@ button {
   margin-top: 2px;
 }
 
+/* Experiment 1: variant switcher */
+.variant-bar {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: calc(100% - 700px);
+  min-width: 300px;
+}
+
+.seg {
+  display: flex;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.seg button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  padding: 6px 10px;
+  border: 0;
+  border-left: 1px solid var(--line);
+  background: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  line-height: 1.1;
+}
+
+.seg button:first-child {
+  border-left: 0;
+}
+
+.seg button:hover {
+  background: var(--hover);
+}
+
+.seg button.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.seg-sub {
+  font-size: 9.5px;
+  font-weight: 500;
+  opacity: 0.75;
+}
+
+/* Experiment 1: write-up of the selected variant */
+.variant-card {
+  position: absolute;
+  top: 52px;
+  right: 12px;
+  bottom: 40px;
+  width: min(370px, calc(100% - 24px));
+  overflow-y: auto;
+  padding: 14px 16px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.vc-head {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.vc-id {
+  flex: none;
+  padding: 3px 7px;
+  border-radius: 5px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.variant-card h2 {
+  margin: 0;
+  font-size: 15px;
+}
+
+.vc-goal {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.vc-summary {
+  margin: 10px 0;
+}
+
+.vc-list h3,
+.vc-measures h3 {
+  margin: 12px 0 4px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+.vc-list ul {
+  margin: 0;
+  padding-left: 16px;
+}
+
+.vc-list li {
+  margin: 2px 0;
+}
+
+.vc-list.issues li::marker {
+  color: #d62828;
+}
+
+.vc-list.added li::marker {
+  color: #2b8fd6;
+}
+
+.vc-list.removed li::marker {
+  color: #d62828;
+}
+
+.vc-list.remodelled li::marker {
+  color: #e09f3e;
+}
+
+.vc-note {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.vc-measures table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.vc-measures th,
+.vc-measures td {
+  padding: 3px 0;
+  border-top: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.vc-measures th {
+  font-weight: 500;
+  color: var(--muted);
+  padding-right: 8px;
+}
+
+.vc-measures td {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.d {
+  display: inline-block;
+  margin-left: 6px;
+  font-size: 11px;
+}
+
+.d.good {
+  color: #2a7f4f;
+}
+
+.d.bad {
+  color: #b23a2e;
+}
+
+.vc-foot {
+  margin: 6px 0 0;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.vc-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.vc-key i {
+  display: inline-block;
+  width: 18px;
+  height: 6px;
+  margin-right: 4px;
+  border-radius: 3px;
+  vertical-align: 1px;
+}
+
+.k-added {
+  background: #3d8bfd;
+}
+
+.k-closed {
+  background: #b9bec4;
+  height: 2px !important;
+}
+
+.k-filter {
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: #d62828;
+}
+
+.k-removed {
+  background: #f4c7c3;
+  box-shadow: inset 0 0 0 1.5px #d62828;
+  height: 8px !important;
+}
+
+.info.beside {
+  right: calc(min(370px, 100% - 24px) + 24px);
+}
+
+@media (max-width: 1100px) {
+  .variant-bar {
+    left: auto;
+    right: 12px;
+    transform: none;
+    max-width: calc(100% - 24px);
+    top: 56px;
+  }
+  .variant-card {
+    top: auto;
+    max-height: 40%;
+  }
+}
+
 @media (max-width: 640px) {
   .panel {
     bottom: auto;
@@ -396,4 +645,8 @@ button {
   .credit {
     display: none;
   }
+}
+
+.k-square {
+  background: #e3b566;
 }
